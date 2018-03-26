@@ -21,7 +21,7 @@ export default class ScreenPrompt extends Component {
     return (
       <ImageBackground 
       style={{width: 'auto', height: '100%'}}
-      source={{ uri: '/Users/nino/Documents/Homework/SP18/CS3200_Mobile-App-Dev/Mystery/src/Images/startScreenBG.png'}}>
+      source={{ uri: 'https://raw.githubusercontent.com/dragonman117/Mystery/master/src/Images/startScreenBG.png'}}>
         <Text style={styles.Title}>
           {"Pokemon Dance"}
         </Text>
