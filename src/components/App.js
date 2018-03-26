@@ -11,6 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
+import Level from '../store/levels';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -21,6 +22,13 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+
+  constructor(){
+    super();
+    levelGen = new Level();
+    console.log(levelGen.genLevel());
+  }
+
   render() {
     return (
       <View style={styles.container}>
