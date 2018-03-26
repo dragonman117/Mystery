@@ -10,6 +10,8 @@ import {
     StyleSheet,
 } from 'react-native';
 
+import Level from '../store/levels';
+
 
 
 export default class GameScreen extends Component{
@@ -18,24 +20,22 @@ export default class GameScreen extends Component{
 
         this.state={
             reciting : false,
-            data : [{
-                direction: 'up',
-            },
-            {
-                direction: 'down',
-            },
-            {
-                direction: 'left',
-            },
-            {
-                direction: 'right',
-            },
-            
-        ],
-            
+            data : [], 
+            sequence: null,
+            level: 1,
         }
+        
 
+    }
 
+    componentDidMount(){
+        let levelGen = new Level();
+        let result = levelGen.genLevel();
+        console.log(levelGen[0]);
+        this.setState({
+            data: result[0]
+        });
+        console.log(this.state.data);
     }
 
     renderList(){
@@ -50,6 +50,7 @@ export default class GameScreen extends Component{
                 padding: 10,
                 marginBottom: 40,
                 marginTop: 40,}}
+            keyExtractor={(item, index) => index}
             />
         );
     }
