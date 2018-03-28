@@ -13,6 +13,9 @@ import {
 } from 'react-native';
 import Level from '../store/levels';
 import { StackNavigator } from 'react-navigation';
+import ScreenPrompt from './ScreenPrompt';
+import GameScreen from "./GameScreen";
+import HighScoreScreen from "./HighScoreScreen";
 
 
 // type Props = {};
@@ -35,26 +38,16 @@ import { StackNavigator } from 'react-navigation';
 //   }
 // }
 
-class HomeScreen extends React.Component {
-    static navigationOptions = {
-        header: null
-        /* No more header config here! */
-    };
-
-    render() {
-        return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text>Home Screen</Text>
-            </View>
-        );
-    }
-}
-
 export default StackNavigator({
     Home: {
-        screen: HomeScreen,
-        title: "Home"
+        screen: ScreenPrompt
     },
+    Game: {
+        screen: GameScreen
+    },
+    HighScore: {
+        screen: HighScoreScreen
+    }
 }, {
   initialRoute: 'Home',
   navigationOptions: {

@@ -17,6 +17,11 @@ import styles from '../Styles/Styles';
 //    next -- Next screen
 //    onButtonPress -- Function to run when button is pressed
 export default class ScreenPrompt extends Component {
+  static navigationOptions = {
+    header: null
+    /* No more header config here! */
+  };
+
   render() {
     return (
       <ImageBackground 
