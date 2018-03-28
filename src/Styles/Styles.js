@@ -31,16 +31,23 @@ export default StyleSheet.create({
     fontWeight: '700',
     alignSelf: 'center'
   },
-  statusBar: {
-    marginTop: 20,
-    width: 375,
-    padding: 20,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    backgroundColor: '#474143',
+  HSButton: {
+    backgroundColor: '#f44842',
+    borderRadius: 50,
+    paddingLeft: 5,
+    paddingRight: 5,
+    paddingTop: 10,
+    paddingBottom: 5,
+    marginTop: 30,
+    marginRight: 10,
+    width: 100,
+    height: 40,
+    alignSelf: 'flex-end',
   },
-  statusText: {
-    fontSize: 30,
-    color: '#FFC636',
+  HSButtonText: {
+    fontSize: 15,
+    color: '#fff',
+    fontWeight: '700',
+    alignSelf: 'center'
   },
 });
