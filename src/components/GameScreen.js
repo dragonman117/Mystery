@@ -18,61 +18,65 @@ export default class GameScreen extends Component{
     constructor(props){
         super(props);
 
-        this.state={
-            reciting : false,
-            data : [], 
-            sequence: null,
-            level: 1,
-        }
         
+        this.data = [];
+        
+        global.sequence = [];
 
     }
 
     componentDidMount(){
-        let levelGen = new Level();
+        const levelGen = new Level();
         let result = levelGen.genLevel();
-        console.log(levelGen[0]);
+        console.log("RESULT AT MOUNT: " + result[0]);
         this.setState({
             data: result[0]
         });
-        console.log(this.state.data);
+        this.data = result[0];
+        //sequence = this.data;
+        console.log("SEQUENCE: " + sequence);
+        this.generateIcons();
+        sequence = this.data;
     }
 
-    renderList(){
-        return (
-            <FlatList 
-            horizontal={true}
-            data={this.state.data}
-            renderItem = {this._renderItem}
-            contentContainerStyle = {{flex: 1,
-                flexDirection: 'row',
-                justifyContent: 'space-around',
-                padding: 10,
-                marginBottom: 40,
-                marginTop: 40,}}
-            keyExtractor={(item, index) => index}
-            />
-        );
-    }
+    
 
     _renderItem = ({item}) => {
+        
         return(
-            <Text>{item.direction}</Text>
-    );
+            <View>
+            
+            {console.log("item = " + item)}
+            <Text>{item}</Text>
+            </View>
+    );}
+
+    generateIcons(){
+        
+
+        for (i = 0; i < 4; i++){
+            console.log("Data Before Add: " + this.data[i]);
+            let temp = this.data[i];
+            setTimeout(() => {sequence[i] = temp]} , 1000);
+            console.log("Sequence after add: " + sequence);
+        }
     }
 
     render(){
 
         return(
             <View>
-                <Text style={{textAlign: 'center', fontSize: 44}}>test</Text>
-                <View>
-                   {this.renderList()} 
+                
+                <Text style={{textAlign: 'center', fontSize: 44,}}>TEST</Text>
+                <View style={{justifyContent: 'space-around', flexDirection:'row'}}>
+                   <Text style={{fontSize: 44}}>{sequence[0]}</Text>
+                   <Text style={{fontSize: 44}}>{sequence[1]}</Text>
+                   <Text style={{fontSize: 44}}>{sequence[2]}</Text>
+                   <Text style={{fontSize: 44}}>{sequence[3]}</Text>
+                    
                 </View>
 
-                <View>
-
-                </View>
+                
                 
             </View>
 
