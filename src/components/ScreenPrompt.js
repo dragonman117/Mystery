@@ -3,6 +3,7 @@ import {
   ImageBackground,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 
@@ -24,9 +25,9 @@ export default class ScreenPrompt extends Component {
 
   render() {
     return (
-      <ImageBackground 
-      style={{width: 'auto', height: '100%'}}
-      source={{ uri: 'https://raw.githubusercontent.com/dragonman117/Mystery/master/src/Images/startScreenBG.png'}}>
+      <ImageBackground
+        style={{ width: 'auto', height: '100%' }}
+        source={{ uri: 'https://raw.githubusercontent.com/dragonman117/Mystery/master/src/Images/startScreenBG.png' }}>
         <Text style={styles.Title}>
           {"Pokemon Dance"}
         </Text>
@@ -38,6 +39,14 @@ export default class ScreenPrompt extends Component {
           value={this.props.next}
           onPressed={this.props.onButtonPress}
         />
+        <TouchableOpacity
+          style={styles.HSButton}
+          onPress={this.handleClick}
+        >
+          <Text style={styles.HSButtonText}>
+            {"High Scores"}
+          </Text>
+        </TouchableOpacity>
       </ImageBackground>
     );
   }
