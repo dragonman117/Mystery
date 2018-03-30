@@ -6,7 +6,7 @@ import {
   View
 } from 'react-native';
 
-export default class HighScoreScreen extends Component<Props> {
+export default class HighScoreScreen extends Component {
 
   constructor(){
     super()
