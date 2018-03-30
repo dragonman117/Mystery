@@ -17,27 +17,6 @@ import ScreenPrompt from './ScreenPrompt';
 import GameScreen from "./GameScreen";
 import HighScoreScreen from "./HighScoreScreen";
 
-
-// type Props = {};
-// export default class App extends Component<Props> {
-//
-//   constructor(){
-//     super();
-//     levelGen = new Level();
-//     console.log(levelGen.genLevel());
-//   }
-//
-//   //screenPrompt
-//
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <Text>HI</Text>
-//       </View>
-//     );
-//   }
-// }
-
 export default StackNavigator({
     Home: {
         screen: ScreenPrompt
@@ -49,7 +28,7 @@ export default StackNavigator({
         screen: HighScoreScreen
     }
 }, {
-  initialRoute: 'Home',
+  initialRouteName: 'Home',
   navigationOptions: {
       headerStyle: {
           backgroundColor: '#f4511e',
