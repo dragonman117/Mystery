@@ -24,6 +24,7 @@ export default class ScreenPrompt extends Component {
   };
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <ImageBackground
         style={{ width: 'auto', height: '100%' }}
@@ -37,11 +38,11 @@ export default class ScreenPrompt extends Component {
         <BetterButton
           message={"Start!"}
           value={this.props.next}
-          onPressed={this.props.onButtonPress}
+          onPressed={() => navigate('Game')}
         />
         <TouchableOpacity
           style={styles.HSButton}
-          onPress={this.handleClick}
+          onPress={() =>navigate('HighScore')}
         >
           <Text style={styles.HSButtonText}>
             {"High Scores"}
